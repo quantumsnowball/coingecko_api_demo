@@ -8,7 +8,7 @@ resp = requests.get(url)
 data = json.loads(resp.content)
 df = pd.DataFrame(data)
 
-selected = df[['name','symbol','market_cap','price_change_percentage_24h',]]
+selected = df[['name','symbol','market_cap','ath_change_percentage','price_change_percentage_24h',]]
 selected.symbol = selected.symbol.apply(str.upper)
 print(selected.head(30))
 
